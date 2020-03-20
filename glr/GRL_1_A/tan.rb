@@ -32,8 +32,7 @@ class PriorityQueue
     return nil if @n.zero?
     @n -= 1
     @tree.first.tap do
-      @tree[0] = @tree[@n]
-      @tree = @tree[0..-2]
+      @tree[0] = @tree.pop
       i = 0
       loop do
         l = i*2+1
